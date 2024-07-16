@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Class(models.Model):
+class Classroom(models.Model):
     name = models.CharField(max_length=20)
     capacity = models.PositiveSmallIntegerField()
     topics = models.EmailField()
