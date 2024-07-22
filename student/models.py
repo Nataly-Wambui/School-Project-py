@@ -9,7 +9,7 @@ class Student(models.Model):
     date_of_birth = models.DateField()
     code = models.PositiveSmallIntegerField()
     age = models.PositiveIntegerField()
-    gender = models.PositiveSmallIntegerField()
+    gender = models.CharField(max_length=20)
     classes = models.CharField(max_length=20)
     contact = models.CharField(max_length=20)
     def __str__(self):

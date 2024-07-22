@@ -7,7 +7,7 @@ class Classroom(models.Model):
     topics = models.EmailField()
     number_of_groups = models.PositiveSmallIntegerField()
     description = models.CharField(max_length=20)
-    courses = models.PositiveSmallIntegerField(max_length=20)
+    courses = models.PositiveSmallIntegerField()
     schedule = models.CharField(max_length=20)
     artwork = models.CharField(max_length=20)
     class_reperesentative = models.CharField(max_length=20)
