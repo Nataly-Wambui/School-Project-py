@@ -4,11 +4,11 @@ from django.db import models
 class Teacher(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     country = models.CharField(max_length=20)
     course = models.CharField(max_length=20)
     teacher_id = models.PositiveSmallIntegerField()
-    hire_date = models.EmailField()
+    hire_date = models.DateField()
     teacher_contact = models.CharField(max_length=20)
     teacher_gender = models.CharField(max_length=20)
     specialization = models.CharField(max_length=20)

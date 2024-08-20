@@ -1,7 +1,9 @@
 from django.db import models
+from course.models import Course
 
 # Create your models here.
 class Student(models.Model):
+    course_details=models.ManyToManyField(Course)
     firstName = models.CharField(max_length=20)
     lastName = models.CharField(max_length=20)
     email = models.EmailField()
@@ -12,6 +14,9 @@ class Student(models.Model):
     gender = models.CharField(max_length=20)
     classes = models.CharField(max_length=20)
     contact = models.CharField(max_length=20)
+    
+    
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
+    
     

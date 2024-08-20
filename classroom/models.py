@@ -1,4 +1,7 @@
 from django.db import models
+from teacher.models import Teacher
+from course.models import Course
+from student.models import Student
 
 # Create your models here.
 class Classroom(models.Model):
@@ -12,5 +15,8 @@ class Classroom(models.Model):
     artwork = models.CharField(max_length=20)
     class_reperesentative = models.CharField(max_length=20)
     room_number = models.PositiveSmallIntegerField()
+    teacher = models.ManyToManyField(Teacher)
+    coursename = models.ForeignKey(Course, on_delete=models.CASCADE)
+    students = models.ManyToManyField(Student, related_name='classroom', blank=True)
     def __str__(self):
         return f"{self.name} {self.room_number}"
